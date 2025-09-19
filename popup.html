@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Phrasier</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				min-width: 250px;
+				padding: 10px;
+			}
+			.phrase {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin: 5px 0;
+				padding: 5px;
+				background: #f1f1f1;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: background 0.2s;
+			}
+			.phrase:hover {
+				background: #e0e0e0; /* slightly darker highlight */
+			}
+			.phrase span {
+				flex-grow: 1;
+			}
+			.delete {
+				width: 18px;
+				height: 18px;
+				margin-left: 10px;
+				cursor: pointer;
+				flex-shrink: 0;
+			}
+			#addContainer {
+				margin-top: 10px;
+				display: flex;
+			}
+			#newPhrase {
+				flex-grow: 1;
+				padding: 5px;
+			}
+			#addBtn {
+				margin-left: 5px;
+				padding: 5px 10px;
+			}
+			#toast {
+				visibility: hidden;
+				min-width: 100px;
+				background: #333;
+				color: #fff;
+				text-align: center;
+				border-radius: 4px;
+				padding: 5px;
+				position: fixed;
+				bottom: 10px;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 1;
+				font-size: 12px;
+				opacity: 0;
+				transition: opacity 0.3s, visibility 0.3s;
+			}
+			#toast.show {
+				visibility: visible;
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Phrasier - Phrase Copier</h3>
+		<div id="phrases"></div>
+
+		<div id="addContainer">
+			<input id="newPhrase" type="text" placeholder="New phrase">
+			<button id="addBtn">Add</button>
+		</div>
+
+		<div id="toast">Phrase Copied!</div>
+
+		<script src="popup.js"></script>
+	</body>
+</html>
